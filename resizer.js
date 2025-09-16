@@ -15,7 +15,7 @@ function checkAndInsertResizer() {
 
     const viewer = document.querySelector('.Viewer');
     if (!viewer) {
-        console.log('未找到 .Viewer 节点。脚本终止。');
+        console.log('Viewer element not found. Script terminated.');
         return;
     }
 
@@ -34,27 +34,27 @@ function checkAndInsertResizer() {
             float: left;
         `;
 
-    // 3. 将 resizer 节点插入到 .Viewer 后面
+    // Insert resizer element after .Viewer
     viewer.parentNode.insertBefore(resizer, viewer.nextSibling);
 
-    // 4. 实现拖动功能
+    // Implement drag functionality
     let isResizing = false;
 
     resizer.addEventListener('mousedown', (e) => {
         isResizing = true;
-        // 阻止默认的拖动行为
+        // Prevent default drag behavior
         e.preventDefault();
     });
 
     document.addEventListener('mousemove', (e) => {
         if (!isResizing) return;
 
-        // 获取 resizer 父元素的左侧位置
+        // Get the left position of resizer's parent element
         const parentRect = viewer.parentNode.getBoundingClientRect();
-        // 计算新的宽度
+        // Calculate new width
         const newWidth = e.clientX - parentRect.left - resizer.offsetWidth / 2;
 
-        // 限制最小宽度
+        // Limit minimum width
         if (newWidth > 100) {
             viewer.style.width = newWidth + 'px';
         }
