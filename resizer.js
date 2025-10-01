@@ -5,6 +5,7 @@
 // @description  resizer of alphaxiv paper assistant tool
 // @author       hiawui
 // @match        https://www.alphaxiv.org/abs/*
+// @match        https://www.alphaxiv.org/pdf/*
 // @match        https://www.alphaxiv.org/private/*
 // @icon         https://assets.alphaxiv.org/communityAvatars/6838cb0214dba7047528e440/204c5012-c96b-47e0-9719-f1a93aead7aa/w100.webp
 // @grant        none
